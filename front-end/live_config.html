@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Configuration Page </title>
+</head>
+<body style="background-color: white;">
+  <div> 
+    <fieldset>
+      <legend>Pokemon Unite Build Viewer</legend> 
+      <div id="buildChoice">
+        <button id="new">New Build</button>
+        <button id="existing">Existing</button>
+      </div>
+      <div>
+        <div id="newBuild">        
+        <h4>New Build</h4>
+        <label for="buildName">Build Name:</label>
+        <input type="text" id = "buildName" name="Build Name">  
+        </div>
+        <div id="existingBuild" style="display:none">        
+          <h4>Existing Build</h4>
+          <label for="buildId">Existing Build:</label>
+          <select id="buildId"></select>      
+        </div>
+        <br/>
+        <label for="pokemon">Pokemon:</label>
+        <select id="pokemon"></select>
+        <br/>        
+        <label for="firstMove">First Move Selection:</label>
+        <select id="firstMove"></select>        
+        <br/>
+        <label for="secondMove">Second Move Selection:</label>
+        <select id="secondMove"></select>        
+        <br/>
+        <label for="battleItem">Battle Item:</label>
+        <select id="battleItem"></select>        
+        <br/>
+        <label for="heldItem1">Held Item:</label>
+        <select id="heldItem1"></select>        
+        <br/>
+        <label for="heldItem2">Held Item:</label>
+        <select id="heldItem2"></select>        
+        <br/>
+        <label for="heldItem3">Held Item:</label>
+        <select id="heldItem3"></select>        
+        <br/>
+      </div>
+      <br/>
+      <br/>
+      <button id="submit">Push to Extension</button>
+      <button id="updateAndPush" style="display:none">Update Build and Push to Extension</button>
+    </form>
+    <p id="success" style="color: green;"></p>
+  </div>
+    
+<!--import extension helper library -->
+  <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+  <script src="jquery.min.js" type="text/javascript"></script>
+  <script src="live_config.js" type="text/javascript"></script>
+</body>
+
+</html>
