@@ -19,6 +19,7 @@ Live-Config instructions:
 5. Update Build and Push to Extension
 
 User Instructions:
+NOTE: If there is no builds for the streamer the extension will let you know and once they add one you can click the big Refresh button
 1. Click on the orange pokeball icon to view the extension (if component mode)
 2. Click on any of the Move Icons or Item Icons to get a description in the Content Box
 3. Click the orange refresh button to refresh if the streamer changes their build during the stream.
