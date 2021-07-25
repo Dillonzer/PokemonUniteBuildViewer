@@ -33,7 +33,7 @@ function ExistingBuild()
   $("#updateAndPush").show();
   $("#submit").hide()
 
-  channelId = "test"
+  
   $.ajax({
     type: "GET",
     url: apiUrl + "/allBuilds/"+channelId,
@@ -74,7 +74,7 @@ function NewBuild()
 }
 
 function Submit() {
-  channelId = "test"
+  
   var buildName = $("#buildName").val() 
   var pokemonName = $("#pokemon").val()     
   var battleItemSelect = $("#battleItem").val()
@@ -110,7 +110,7 @@ function Submit() {
 }
 
 function Update() {
-  channelId = "test"
+  
   var buildName = $("#buildId").val() 
   var pokemonName = $("#pokemon").val()     
   var battleItemSelect = $("#battleItem").val()
@@ -218,7 +218,7 @@ function GetInformation(){
     }
       })
 
-  channelId = "test"
+  
   $.ajax({
     type: "GET",
     url: apiUrl + "/allBuilds/"+channelId,
@@ -249,7 +249,7 @@ function GetInformation(){
 
 function GetBuild()
 {
-  channelId = "test"
+  
   var pokemonSelect = $("#pokemon");
   var battleItemSelect = $("#battleItem")
   var heldItem1Select = $("#heldItem1")

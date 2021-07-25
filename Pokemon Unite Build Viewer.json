@@ -25,6 +25,50 @@
       "orientation": "Portrait",
       "type": "component",
       "viewerType": "Broadcaster"
+    },
+    {
+      "channelId": "56083652",
+      "configurationAnchor": "panel",
+      "displayChannelName": "Dillonzer",
+      "features": {
+        "isBitsEnabled": false,
+        "isChatEnabled": false,
+        "isSubscriptionStatusAvailable": false
+      },
+      "frameSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "2",
+      "isPopout": false,
+      "label": "",
+      "linked": true,
+      "linkedUserId": "265737932",
+      "orientation": "Portrait",
+      "type": "dashboard",
+      "viewerType": "Broadcaster"
+    },
+    {
+      "channelId": "56083652",
+      "configurationAnchor": "panel",
+      "displayChannelName": "Dillonzer",
+      "features": {
+        "isBitsEnabled": false,
+        "isChatEnabled": false,
+        "isSubscriptionStatusAvailable": false
+      },
+      "frameSize": {
+        "width": 852,
+        "height": 480
+      },
+      "id": "3",
+      "isPopout": false,
+      "label": "",
+      "linked": false,
+      "linkedUserId": "",
+      "orientation": "Portrait",
+      "type": "component",
+      "viewerType": "Broadcaster"
     }
   ],
   "manifest": {
@@ -42,7 +86,7 @@
     "iconUrls": {},
     "id": "442dnakrbplhbrsjz5en1bc53i7obr",
     "installationCount": -42,
-    "liveConfigUrl": "",
+    "liveConfigUrl": "https://localhost:8080/live_config.html",
     "name": "Pokemon Unite Build Viewer",
     "panelHeight": 500,
     "privacyPolicyUrl": "",
@@ -88,6 +132,10 @@
       },
       "config": {
         "viewerUrl": "https://localhost:8080/config.html",
+        "canLinkExternalContent": false
+      },
+      "liveConfig": {
+        "viewerUrl": "https://localhost:8080/live_config.html",
         "canLinkExternalContent": false
       }
     },

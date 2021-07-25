@@ -1,0 +1,60 @@
+#pokemon {
+    margin-bottom: 200px;
+}
+
+#items {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#content {
+    height: 40%;
+    width: 96%;
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    border-color: #F37521;
+    border-style:solid
+}
+
+.img-with-txt {
+    text-align: center;
+    width: 75px;
+}
+
+.img-with-txt img {
+    display: block;
+    margin: 0 auto;
+}
+
+.pokemonimg {
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.moveimg {
+    width: 75px;
+    height: 75px;
+}
+
+.itemimg {
+    width: 75px;
+    height: 75px;
+}
+
+.headerText {
+    font-size: xx-large;
+    stroke: black;
+    stroke-width: 5px;
+    color: white;
+}
+
+.text {
+    font-size: large;
+    stroke: black;
+    stroke-width: 3px;
+    color: white;
+}

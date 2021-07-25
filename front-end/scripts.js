@@ -2,6 +2,8 @@ const pokeurl = "https://dev-ptcg-api.herokuapp.com/pokemonunite"
 
 var AllPokemon = [];
 var AllItems = [];
+var Move1, Move2, HeldItem1, HeldItem2, HeldItem3, BattleItem
+
 
 function Pokemon(name, type, stats, moves, imageLink)
 {
@@ -47,9 +49,26 @@ function Item(name, type, desc, imageLink)
     this.ImageLink = imageLink
 }
 
+window.Twitch.ext.onAuthorized((auth) => {
+    token = auth.token;
+    userId = auth.userId;
+    channelId = auth.channelId
+  });
+
 window.onload = function()
 {
+    EventListeners()
     this.Setup(GetPokemon);    
+}
+
+function EventListeners()
+{
+    document.getElementById("move1img").addEventListener("click",function() {LoadInformationIntoContentArea("move1")})
+    document.getElementById("move2img").addEventListener("click",function() {LoadInformationIntoContentArea("move2")})
+    document.getElementById("heldItem1").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem1")})
+    document.getElementById("heldItem2").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem2")})
+    document.getElementById("heldItem3").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem3")})
+    document.getElementById("battleItem").addEventListener("click",function() {LoadInformationIntoContentArea("battleItem")})
 }
 
 function Setup(GetPokemonCallback)
@@ -99,21 +118,29 @@ function GetItems(LoadBuildCallback)
 
 function LoadBuild()
 {
-    channelId = "test"
     $.ajax({
         type: "GET",
         url: pokeurl + "/build/"+channelId,
         success: function(data) {
           if(typeof data != 'undefined')
             {
-                if( data.length ) 
-                {
-                    console.log(data[index])
-                }
-                else
-                {  
-                    console.log(data)
-                }
+              $("#pokemonImg").attr("src",AllPokemon[0].ImageLink)              
+              $("#pokemonName").text(data.pokemonName)  
+              Move1 = GetMove(data.move1)
+              Move2 = GetMove(data.move2)
+              HeldItem1 = GetItem(data.heldItem1)
+              HeldItem2 = GetItem(data.heldItem2)
+              HeldItem3 = GetItem(data.heldItem3)
+              BattleItem = GetItem(data.battleItem) 
+              
+              $("#move1img").attr("src",Move1.ImageLink)  
+              $("#move1txt").text(Move1.Name)    
+              $("#move2img").attr("src",Move2.ImageLink)     
+              $("#move2txt").text(Move2.Name)       
+              $("#battleItemImg").attr("src",BattleItem.ImageLink) 
+              $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
+              $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
+              $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
             }
           
         },
@@ -121,4 +148,32 @@ function LoadBuild()
             alert(error.responseJSON.message);
         }
           })
+}
+
+function GetMove(moveName)
+{
+    AllPokemon.forEach(pokemon => {
+        pokemon.Moves.forEach(move => {
+            if(move.Name == moveName)
+            {
+                return move
+            }
+        })
+        
+    });
+}
+
+function GetItem(itemName)
+{
+    AllItems.forEach(item => {
+        if (item.Name == itemName)
+        {
+            return item;
+        }
+    })
+}
+
+function LoadInformationIntoContentArea()
+{
+
 }
