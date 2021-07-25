@@ -11,9 +11,8 @@
 
 #content {
     height: 40%;
-    width: 96%;
+    width: 95%;
     position: absolute;
-    background-color: black;
     border-radius: 10px;
     border-color: #F37521;
     border-style:solid
@@ -104,9 +103,8 @@
 
 #nobuildsfound {
     height: 50%;
-    width: 96%;
+    width: 95%;
     position: absolute;
-    background-color: black;
     border-radius: 10px;
     border-color: #F37521;
     border-style:solid;
@@ -149,10 +147,9 @@
 
 #panel_content {
     height: 70%;
-    width: 94%;
+    width: 93%;
     margin-top: 75px;
     position: absolute;
-    background-color: black;
     border-radius: 10px;
     border-color: #F37521;
     border-style:solid
