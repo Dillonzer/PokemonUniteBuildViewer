@@ -1,8 +1,8 @@
-const pokeurl = "https://dev-ptcg-api.herokuapp.com/pokemonunite"
+const pokeurl = "https://ptcg-api.herokuapp.com/pokemonunite"
 
 var AllPokemon = [];
 var AllItems = [];
-var Move1, Move2, HeldItem1, HeldItem2, HeldItem3, BattleItem
+var Move1, Move2, HeldItem1, HeldItem2, HeldItem3, BattleItem, PokemonForBuild
 
 
 function Pokemon(name, type, stats, moves, imageLink)
@@ -69,6 +69,19 @@ function EventListeners()
     document.getElementById("heldItem2").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem2")})
     document.getElementById("heldItem3").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem3")})
     document.getElementById("battleItem").addEventListener("click",function() {LoadInformationIntoContentArea("battleItem")})
+    document.getElementById("refreshNoBuildsFound").addEventListener("click",function() {Refresh()})
+    document.getElementById("refresh").addEventListener("click",function() {Refresh()})
+}
+
+function Refresh()
+{
+    Setup(GetPokemon)
+    $("#contentDesc").text("Click a move or item to see a description of it in this box!")
+    $("#contentName").text("")
+    $("#contentLevel").text("")
+    $("#contentType").text("")
+    $("#contentCooldown").text("")
+    $("#contentUpgrade").text("")
 }
 
 function Setup(GetPokemonCallback)
@@ -124,14 +137,15 @@ function LoadBuild()
         success: function(data) {
           if(typeof data != 'undefined')
             {
-              $("#pokemonImg").attr("src",AllPokemon[0].ImageLink)              
-              $("#pokemonName").text(data.pokemonName)  
-              Move1 = GetMove(data.move1)
-              Move2 = GetMove(data.move2)
-              HeldItem1 = GetItem(data.heldItem1)
-              HeldItem2 = GetItem(data.heldItem2)
-              HeldItem3 = GetItem(data.heldItem3)
-              BattleItem = GetItem(data.battleItem) 
+              PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data.pokemonName) return pokemon})
+              $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
+              $("#pokemonName").text(PokemonForBuild.Name) 
+              Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move1) return move})
+              Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move2) return move})
+              HeldItem1 = AllItems.find(function(item){if(item.Name == data.heldItem1) return item})
+              HeldItem2 = AllItems.find(function(item){if(item.Name == data.heldItem2) return item})
+              HeldItem3 = AllItems.find(function(item){if(item.Name == data.heldItem3) return item})
+              BattleItem = AllItems.find(function(item){if(item.Name == data.battleItem) return item}) 
               
               $("#move1img").attr("src",Move1.ImageLink)  
               $("#move1txt").text(Move1.Name)    
@@ -141,6 +155,12 @@ function LoadBuild()
               $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
               $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
               $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
+              $("#nobuildsfound").hide()
+              $("#viewer").show()
+            }
+            else{
+                $("#nobuildsfound").show()
+                $("#viewer").hide()
             }
           
         },
@@ -150,30 +170,58 @@ function LoadBuild()
           })
 }
 
-function GetMove(moveName)
+function LoadInformationIntoContentArea(area)
 {
-    AllPokemon.forEach(pokemon => {
-        pokemon.Moves.forEach(move => {
-            if(move.Name == moveName)
-            {
-                return move
-            }
-        })
-        
-    });
-}
-
-function GetItem(itemName)
-{
-    AllItems.forEach(item => {
-        if (item.Name == itemName)
-        {
-            return item;
-        }
-    })
-}
-
-function LoadInformationIntoContentArea()
-{
+    switch(area)
+    {
+        case "move1":
+            $("#contentName").text(Move1.Name)
+            $("#contentLevel").text(Move1.Levels.replace(" (Choose One)",""))
+            $("#contentDesc").text(Move1.Description)
+            $("#contentType").text("("+Move1.Type+")")
+            $("#contentCooldown").text(Move1.Cooldown)
+            $("#contentUpgrade").text(Move1.Upgrade)
+            break;
+        case "move2":
+            $("#contentName").text(Move2.Name)
+            $("#contentLevel").text(Move2.Levels.replace(" (Choose One)",""))
+            $("#contentDesc").text(Move2.Description)
+            $("#contentType").text("("+Move2.Type+")")
+            $("#contentCooldown").text(Move2.Cooldown)
+            $("#contentUpgrade").text(Move2.Upgrade)
+            break;
+        case "battleItem":
+            $("#contentName").text(BattleItem.Name)
+            $("#contentDesc").text(BattleItem.Description)
+            $("#contentLevel").text("")
+            $("#contentType").text("")
+            $("#contentCooldown").text("")
+            $("#contentUpgrade").text("")
+            break;
+        case "heldItem1":
+            $("#contentName").text(HeldItem1.Name)
+            $("#contentDesc").text(HeldItem1.Description)
+            $("#contentLevel").text("")
+            $("#contentType").text("")
+            $("#contentCooldown").text("")
+            $("#contentUpgrade").text("")
+            break;
+        case "heldItem2":
+            $("#contentName").text(HeldItem2.Name)
+            $("#contentDesc").text(HeldItem2.Description)
+            $("#contentLevel").text("")
+            $("#contentType").text("")
+            $("#contentCooldown").text("")
+            $("#contentUpgrade").text("")
+            break;
+        case "heldItem3":
+            $("#contentName").text(HeldItem3.Name)
+            $("#contentDesc").text(HeldItem3.Description)
+            $("#contentLevel").text("")
+            $("#contentType").text("")
+            $("#contentCooldown").text("")
+            $("#contentUpgrade").text("")
+            break;
+    }
 
 }

@@ -2,11 +2,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <title>Viewer Page</title>
+    <title>Panel Page</title>
 </head>
-<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: grey;">
     <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-    <img id="refresh" src="images/refresh.png" title="Refresh" />
     <div id="nobuildsfound">
         <p style="padding-left: 5px;">No builds currently found for this channel.<p>
         <button id="refreshNoBuildsFound">Refresh!</button>
@@ -14,19 +13,34 @@
     <div id="viewer" style="display: none;">
         <div id="pokemon">
             <img id="pokemonImg" class="pokemonimg"/>
-            <p id="pokemonName" class="headerText"></p>
+            <p id="pokemonName" class="panel_headerText"></p>
             <div class="img-with-txt" style="float: left;">  
                 <img id="move1img" class="moveimg"/>
-                <p id="move1txt" class="text"></p>
+                <p id="move1txt" class="text" style="display: none;"></p>
             </div>   
-            <div class="img-with-txt" style="float: left; padding-left: 30px;">  
+            <div class="img-with-txt" style="float: left; ">  
                 <img id="move2img" class="moveimg"/>
-                <p id="move2txt" class="text"></p>
+                <p id="move2txt" class="text"  style="display: none;"></p>
             </div>   
         </div>
-        <div id="content">
+        <div id="panel_items">            
+            <div id="heldItem1" >             
+                <img id="heldItem1Img" class="panel_itemimg"/>
+            </div>
+            <div id="heldItem2" >    
+                <img id="heldItem2Img" class="panel_itemimg"/>
+            </div>
+            <div id="heldItem3" >    
+                <img id="heldItem3Img" class="panel_itemimg"/>
+            </div>
+            <div id="battleItem" style="float: right">             
+                <img id="battleItemImg" class="panel_itemimg"/>
+            </div>
+        </div>        
+        <img id="refresh" src="images/refresh.png" title="Refresh" />
+        <div id="panel_content">
             <div style="padding-left: 5px;">
-                <div id="content-header">
+                <div id="panel_content-header">
                     <p id="contentName"></p>
                     <p id="contentType"></p>
                     <p id="contentCooldown"></p>
@@ -39,20 +53,6 @@
                     <p id="contentLevel"></p>
                 </div>
             </div>            
-        </div>
-        <div id="items">            
-            <div id="heldItem1" >             
-                <img id="heldItem1Img" class="itemimg"/>
-            </div>
-            <div id="heldItem2" >    
-                <img id="heldItem2Img" class="itemimg"/>
-            </div>
-            <div id="heldItem3" >    
-                <img id="heldItem3Img" class="itemimg"/>
-            </div>
-            <div id="battleItem" style="padding-left:100px">             
-                <img id="battleItemImg" class="itemimg"/>
-            </div>
         </div>
     </div>    
 </body>

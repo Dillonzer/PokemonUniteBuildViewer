@@ -1,6 +1,6 @@
 
 var token, userId, channelId;
-var apiUrl = 'https://dev-ptcg-api.herokuapp.com/pokemonunite'
+var apiUrl = 'https://ptcg-api.herokuapp.com/pokemonunite'
 
 window.Twitch.ext.onAuthorized((auth) => {
   token = auth.token;

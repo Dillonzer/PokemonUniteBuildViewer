@@ -58,3 +58,109 @@
     stroke-width: 3px;
     color: white;
 }
+
+#content-header {
+    display: flex;
+    font-size: x-large;
+    color: white;
+    margin-top: -23px;
+}
+
+#content-desc {
+    position: absolute;
+    font-size: large;
+    color: white;
+    margin-top: -23px;
+}
+
+#content-footer {    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    bottom: 0;
+    font-size: large;
+    color: white;
+    width: 93%;
+}
+
+#content-header p+p {
+    margin-left: 20px;
+}
+
+#panel_content-header {
+    display: flex;
+    font-size: larger;
+    color: white;
+    margin-top: -18px;
+}
+
+#panel_content-header p+p {
+    margin-left: 10px;
+}
+
+#content-footer p+p {    
+    margin-left: 10px;
+}
+
+#nobuildsfound {
+    height: 50%;
+    width: 96%;
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    border-color: #F37521;
+    border-style:solid;
+    color: white;
+    font-size: larger;
+}
+
+#refreshNoBuildsFound
+{ 
+    margin-left:39px;
+    font-size: 100%;
+    width: 80%;
+    height: 50px;
+    font-size: 100%;
+    margin-top: 40%;
+    font-weight: bold;
+}
+
+#refresh {
+    position: absolute;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    padding-right: 5px;
+    margin-top: -25px;
+    
+}
+
+.panel_headerText {
+    font-size: large;
+    stroke: black;
+    stroke-width: 10px;
+    color: white;
+}
+
+#panel_items {    
+    display: flex;
+    position: absolute;
+}
+
+#panel_content {
+    height: 70%;
+    width: 94%;
+    margin-top: 75px;
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    border-color: #F37521;
+    border-style:solid
+}
+
+.panel_itemimg {
+    width: 70px;
+    height: 70px;
+}
+
+
