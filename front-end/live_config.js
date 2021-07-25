@@ -18,22 +18,54 @@ function EventHandlers() {
   document.getElementById("new").addEventListener("click",function() {NewBuild()})
   document.getElementById("existing").addEventListener("click",function() {ExistingBuild()})
   document.getElementById("pokemon").addEventListener("change",function() {GetMoves()})
-  document.getElementById("buildName").addEventListener("change",function() {GetBuild()})
+  document.getElementById("buildId").addEventListener("change",function() {GetBuild()})
   document.getElementById("submit").addEventListener("click",function() {Submit()})
+  document.getElementById("updateAndPush").addEventListener("click",function() {Update()})
   document.getElementById("updateAndPush").addEventListener("click",function() {Submit()})
 }
 
 function ExistingBuild() 
 {
+  document.getElementById("success").textContent = ""
+  var buildName = $("#buildId")
   $("#existingBuild").show();
   $("#newBuild").hide();
   $("#updateAndPush").show();
   $("#submit").hide()
+
+  channelId = "test"
+  $.ajax({
+    type: "GET",
+    url: apiUrl + "/allBuilds/"+channelId,
+    success: function(data) {
+    var htmlOptions = [];
+    if(typeof data != 'undefined')
+    {
+    if( data.length ) {
+          for( item in data ) {
+              html = '<option value="' + data[item].buildName + '">' + data[item].buildName + '</option>';
+          htmlOptions[htmlOptions.length] = html;
+          }
+          buildName.empty().append( htmlOptions.join('') );
+      }
+      else
+      {        
+        html = '<option value="' + data.buildName + '">' + data.buildName + '</option>';
+        htmlOptions[0] = html;
+        buildName.empty().append( htmlOptions.join('') );
+      }
+    }
+    },
+    error: function(error) {
+        alert(error.responseJSON.message);
+    }
+      })
   GetBuild()
 }
 
 function NewBuild() 
 {
+  document.getElementById("success").textContent = ""
   $("#newBuild").show();
   $("#existingBuild").hide();
   $("#updateAndPush").hide();
@@ -71,6 +103,42 @@ function Submit() {
     "timeout": 0,
   };
   
+  $.ajax(settings).done(function (response) {
+    document.getElementById("success").style.color = "green"
+    document.getElementById("success").textContent = "SUCCESS!"
+  });
+}
+
+function Update() {
+  channelId = "test"
+  var buildName = $("#buildId").val() 
+  var pokemonName = $("#pokemon").val()     
+  var battleItemSelect = $("#battleItem").val()
+  var heldItem1Select = $("#heldItem1").val()
+  var heldItem2Select = $("#heldItem2").val()
+  var heldItem3Select = $("#heldItem3").val()
+  var move1 = $("#firstMove").val()
+  var move2 = $("#secondMove").val()
+
+  if(heldItem1Select == heldItem2Select || heldItem1Select == heldItem3Select || heldItem2Select == heldItem3Select)
+  { 
+    document.getElementById("success").style.color = "red"
+    document.getElementById("success").textContent = "Can't have two of the same Items!"
+    return
+  }
+  if(buildName == "")
+  { 
+    document.getElementById("success").style.color = "red"
+    document.getElementById("success").textContent = "Need a build name!"
+    return
+  }
+
+  var settings = {
+    "url": apiUrl+"/upsert/"+buildName+"/"+pokemonName+"/"+move1+"/"+move2+"/"+battleItemSelect+"/"+heldItem1Select+"/"+heldItem2Select+"/"+heldItem3Select+"/"+channelId,
+    "method": "POST",
+    "timeout": 0,
+  };
+
   $.ajax(settings).done(function (response) {
     document.getElementById("success").style.color = "green"
     document.getElementById("success").textContent = "SUCCESS!"
@@ -153,7 +221,7 @@ function GetInformation(){
   channelId = "test"
   $.ajax({
     type: "GET",
-    url: apiUrl + "/build/"+channelId,
+    url: apiUrl + "/allBuilds/"+channelId,
     success: function(data) {
     var htmlOptions = [];
     if(typeof data != 'undefined')
@@ -171,7 +239,6 @@ function GetInformation(){
         htmlOptions[0] = html;
         buildName.empty().append( htmlOptions.join('') );
       }
-      GetBuild()
     }
     },
     error: function(error) {
@@ -193,11 +260,13 @@ function GetBuild()
   buildName = $("#buildId").val()
   $.ajax({
     type: "GET",
-    url: apiUrl + "/build/"+channelId,
+    url: apiUrl + "/allBuilds/"+channelId,
     success: function(data) {
       if(typeof data != 'undefined')
         {
           if( data.length ) {
+            for(index in data)
+            {
                 if(data[index].buildName == buildName)
                 {
                     pokemonSelect.val(data[index].pokemonName)
@@ -208,7 +277,9 @@ function GetBuild()
                     heldItem1Select.val(data[index].heldItem1)
                     heldItem2Select.val(data[index].heldItem2)
                     heldItem3Select.val(data[index].heldItem3)
+                    break
                 }
+              }
             }
             else
             { 

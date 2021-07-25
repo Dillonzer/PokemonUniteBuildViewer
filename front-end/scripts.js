@@ -1,4 +1,4 @@
-const pokeurl = "https://ptcg-api.herokuapp.com/pokemonunite"
+const pokeurl = "https://dev-ptcg-api.herokuapp.com/pokemonunite"
 
 var AllPokemon = [];
 var AllItems = [];
@@ -99,5 +99,26 @@ function GetItems(LoadBuildCallback)
 
 function LoadBuild()
 {
-    console.log(AllItems)
+    channelId = "test"
+    $.ajax({
+        type: "GET",
+        url: pokeurl + "/build/"+channelId,
+        success: function(data) {
+          if(typeof data != 'undefined')
+            {
+                if( data.length ) 
+                {
+                    console.log(data[index])
+                }
+                else
+                {  
+                    console.log(data)
+                }
+            }
+          
+        },
+        error: function(error) {
+            alert(error.responseJSON.message);
+        }
+          })
 }
