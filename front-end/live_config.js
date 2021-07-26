@@ -54,13 +54,13 @@ function ExistingBuild()
         htmlOptions[0] = html;
         buildName.empty().append( htmlOptions.join('') );
       }
+      GetBuild()
     }
     },
     error: function(error) {
         alert(error.responseJSON.message);
     }
       })
-  GetBuild()
 }
 
 function NewBuild() 
