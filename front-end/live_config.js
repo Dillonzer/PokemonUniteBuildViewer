@@ -257,6 +257,14 @@ function GetBuild()
   var heldItem3Select = $("#heldItem3")
   var firstMoveSelect = $("#firstMove")
   var secondMoveSelect = $("#secondMove")
+
+  var pokemonName = ""
+  var move1 = ""
+  var move2 = ""
+  var btlItem = ""
+  var hi1 = ""
+  var hi2 = ""
+  var hi3 = ""
   buildName = $("#buildId").val()
   $.ajax({
     type: "GET",
@@ -269,41 +277,46 @@ function GetBuild()
             {
                 if(data[index].buildName == buildName)
                 {
-                    pokemonSelect.val(data[index].pokemonName)
-                    GetMoves()
-                    firstMoveSelect.val(data[index].move1)
-                    secondMoveSelect.val(data[index].move2)
-                    battleItemSelect.val(data[index].battleItem)
-                    heldItem1Select.val(data[index].heldItem1)
-                    heldItem2Select.val(data[index].heldItem2)
-                    heldItem3Select.val(data[index].heldItem3)
-                    break
+                  pokemonName = data[index].pokemonName
+                  move1 = data[index].move1
+                  move2 = data[index].move2
+                  btlItem = data[index].battleItem
+                  hi1 = data[index].heldItem1
+                  hi2 = data[index].heldItem2
+                  hi3 = data[index].heldItem3
+                  break
                 }
               }
             }
             else
-            { 
-              
+            {               
                 if(data.buildName == buildName)
                 {
-                  pokemonSelect.val(data.pokemonName) 
-                  GetMoves()
-                  firstMoveSelect.val(data.move1)
-                  secondMoveSelect.val(data.move2)
-                  battleItemSelect.val(data.battleItem)
-                  heldItem1Select.val(data.heldItem1)
-                  heldItem2Select.val(data.heldItem2)
-                  heldItem3Select.val(data.heldItem3)
+                  pokemonName = data.pokemonName
+                  move1 = data.move1
+                  move2 = data.move2
+                  btlItem = data.battleItem
+                  hi1 = data.heldItem1
+                  hi2 = data.heldItem2
+                  hi3 = data.heldItem3
                 }
               
             }
           }
       
+          pokemonSelect.val(pokemonName)
+          GetAndSelectMoves(move1, move2)
+          battleItemSelect.val(btlItem)
+          heldItem1Select.val(hi1)
+          heldItem2Select.val(hi2)
+          heldItem3Select.val(hi3)
     },
     error: function(error) {
         alert(error.responseJSON.message);
     }
       })
+
+
 }
 
 function GetMoves()
@@ -340,6 +353,50 @@ function GetMoves()
             firstMoveSelect.empty().append( move1HtmlOptions.join('') );
             secondMoveSelect.empty().append( move2HtmlOptions.join('') );
         }
+      },
+      error: function(error) {
+          alert(error.responseJSON.message);
+      }
+        })
+}
+
+function GetAndSelectMoves(move1, move2)
+{
+    var pokemonSelect = $("#pokemon").val();
+    var firstMoveSelect = $("#firstMove")
+    var secondMoveSelect = $("#secondMove")
+    firstMoveSelect.empty()
+    secondMoveSelect.empty()
+
+    
+    $.ajax({
+      type: "GET",
+      url: apiUrl + "/pokemon",
+      success: function(data) {
+      var move1HtmlOptions = []
+      var move2HtmlOptions = []
+      if( data.length ) {
+            for( item in data ) {
+                if(data[item].name == pokemonSelect)
+                {
+                  move1Html = '<option value="' + data[item].moves[4].name + '">' + data[item].moves[4].name + '</option>';
+                  move1HtmlOptions[move1HtmlOptions.length] = move1Html;
+                  move1Html = '<option value="' + data[item].moves[5].name + '">' + data[item].moves[5].name + '</option>';
+                  move1HtmlOptions[move1HtmlOptions.length] = move1Html;
+                  move2Html = '<option value="' + data[item].moves[6].name + '">' + data[item].moves[6].name + '</option>';
+                  move2HtmlOptions[move2HtmlOptions.length] = move2Html;
+                  move2Html = '<option value="' + data[item].moves[7].name + '">' + data[item].moves[7].name + '</option>';
+                  move2HtmlOptions[move2HtmlOptions.length] = move2Html;
+                  break
+                }
+            }
+  
+            firstMoveSelect.empty().append( move1HtmlOptions.join('') );
+            secondMoveSelect.empty().append( move2HtmlOptions.join('') );
+        }
+        
+        firstMoveSelect.val(move1)
+        secondMoveSelect.val(move2)
       },
       error: function(error) {
           alert(error.responseJSON.message);
