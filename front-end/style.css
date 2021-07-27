@@ -37,6 +37,8 @@
 .moveimg {
     width: 75px;
     height: 75px;
+    border-radius: 50%;
+    border: 5px white solid;
 }
 
 .itemimg {
@@ -80,6 +82,7 @@
     font-size: large;
     color: white;
     width: 93%;
+    padding-bottom: 13px;
 }
 
 #content-header p+p {
@@ -158,6 +161,26 @@
 .panel_itemimg {
     width: 70px;
     height: 70px;
+}
+
+#sponsor {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    font-size: small;
+    color: white;
+}
+
+#pokemonunitegg_logo
+{
+    width: 150px; 
+    padding-left: 28px;
+}
+
+#panel_pokemonunitegg_logo
+{
+    width: 150px; 
+    padding-left: 15px;
 }
 
 
