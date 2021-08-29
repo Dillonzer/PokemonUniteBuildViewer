@@ -78,10 +78,10 @@ function Refresh()
     Setup(GetPokemon)
     $("#contentDesc").text("Click a move or item to see a description of it in this box!")
     $("#contentName").text("")
-    $("#contentLevel").text("")
+    //$("#contentLevel").text("")
     $("#contentType").text("")
     $("#contentCooldown").text("")
-    $("#contentUpgrade").text("")
+    //$("#contentUpgrade").text("")
 }
 
 function Setup(GetPokemonCallback)
@@ -176,51 +176,51 @@ function LoadInformationIntoContentArea(area)
     {
         case "move1":
             $("#contentName").text(Move1.Name)
-            $("#contentLevel").text(Move1.Levels.replace(" (Choose One)",""))
+            //$("#contentLevel").text(Move1.Levels.replace(" (Choose One)",""))
             $("#contentDesc").text(Move1.Description)
             $("#contentType").text("("+Move1.Type+")")
             $("#contentCooldown").text(Move1.Cooldown)
-            $("#contentUpgrade").text(Move1.Upgrade)
+            //$("#contentUpgrade").text(Move1.Upgrade)
             break;
         case "move2":
             $("#contentName").text(Move2.Name)
-            $("#contentLevel").text(Move2.Levels.replace(" (Choose One)",""))
+            //$("#contentLevel").text(Move2.Levels.replace(" (Choose One)",""))
             $("#contentDesc").text(Move2.Description)
             $("#contentType").text("("+Move2.Type+")")
             $("#contentCooldown").text(Move2.Cooldown)
-            $("#contentUpgrade").text(Move2.Upgrade)
+            //$("#contentUpgrade").text(Move2.Upgrade)
             break;
         case "battleItem":
             $("#contentName").text(BattleItem.Name)
             $("#contentDesc").text(BattleItem.Description)
-            $("#contentLevel").text("")
+            //$("#contentLevel").text("")
             $("#contentType").text("")
             $("#contentCooldown").text("")
-            $("#contentUpgrade").text("")
+            //$("#contentUpgrade").text("")
             break;
         case "heldItem1":
             $("#contentName").text(HeldItem1.Name)
             $("#contentDesc").text(HeldItem1.Description)
-            $("#contentLevel").text("")
+            //$("#contentLevel").text("")
             $("#contentType").text("")
             $("#contentCooldown").text("")
-            $("#contentUpgrade").text("")
+            //$("#contentUpgrade").text("")
             break;
         case "heldItem2":
             $("#contentName").text(HeldItem2.Name)
             $("#contentDesc").text(HeldItem2.Description)
-            $("#contentLevel").text("")
+            //$("#contentLevel").text("")
             $("#contentType").text("")
             $("#contentCooldown").text("")
-            $("#contentUpgrade").text("")
+            //$("#contentUpgrade").text("")
             break;
         case "heldItem3":
             $("#contentName").text(HeldItem3.Name)
             $("#contentDesc").text(HeldItem3.Description)
-            $("#contentLevel").text("")
+            //$("#contentLevel").text("")
             $("#contentType").text("")
             $("#contentCooldown").text("")
-            $("#contentUpgrade").text("")
+            //$("#contentUpgrade").text("")
             break;
     }
 

@@ -121,7 +121,7 @@
     "authorName": "Dillonzer",
     "bitsEnabled": false,
     "canInstall": true,
-    "configUrl": "https://localhost:8080/config.html",
+    "configUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/config.html",
     "configurationLocation": "none",
     "description": "Does chat keep asking you about your Pokemon Unite build? No more worries! Now you can set your build up in the Dashboard view and then everyone in chat can see it!\n\n- Allows for saving multiple builds for easy switching\n- Mobile (Android) friendly and Panel options are available!",
     "eulaTosUrl": "",
@@ -130,44 +130,45 @@
     "iconUrls": {
       "100x100": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/logo55205fdd-08d9-4230-8c98-980dab269cb1",
       "24x24": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/taskbar41f8127d-f7a7-4dd9-bf29-14d9a1e0d913",
-      "300x200": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/discoveryf90c2f76-c02e-40f2-ab9e-70ecd0ef120d"
+      "300x200": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/discovery2f553002-07f0-44d3-a935-b15ec8a8fe6c"
     },
     "id": "442dnakrbplhbrsjz5en1bc53i7obr",
     "installationCount": -42,
-    "liveConfigUrl": "https://localhost:8080/live_config.html",
+    "liveConfigUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/live_config.html",
     "name": "Pokemon Unite Build Viewer",
     "panelHeight": 500,
     "privacyPolicyUrl": "",
     "requestIdentityLink": false,
     "requiredBroadcasterAbilities": [],
     "screenshotUrls": [
-      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/screenshotea2ea0b6-9991-4388-9d3e-d178841909eb"
+      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/screenshotf148f8ee-6a9d-4757-8f78-e072022ac1b5",
+      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/screenshot3404f5dd-103e-4718-90c4-e969cb02988c"
     ],
     "sku": "",
-    "state": "Testing",
+    "state": "In Review",
     "subscriptionsSupportLevel": "none",
     "summary": "Show your viewers your Pokemon Unite build on stream!",
     "supportEmail": "dillonzerapps@gmail.com",
     "vendorCode": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "viewerSummary": "Displays the streamer's Pokemon Unite Build",
-    "viewerUrl": "https://localhost:8080/panel.html",
+    "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
     "viewerUrls": {
-      "mobile": "https://localhost:8080/mobile.html",
-      "panel": "https://localhost:8080/panel.html",
-      "component": "https://localhost:8080/video_component.html"
+      "mobile": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/mobile.html",
+      "panel": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
+      "component": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/video_component.html"
     },
     "views": {
       "mobile": {
-        "viewerUrl": "https://localhost:8080/mobile.html"
+        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/mobile.html"
       },
       "panel": {
-        "viewerUrl": "https://localhost:8080/panel.html",
+        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
         "height": 500,
         "canLinkExternalContent": false
       },
       "component": {
-        "viewerUrl": "https://localhost:8080/video_component.html",
+        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/video_component.html",
         "aspectWidth": 0,
         "aspectHeight": 0,
         "aspectRatioX": 44000,
@@ -181,11 +182,11 @@
         "autoScale": true
       },
       "config": {
-        "viewerUrl": "https://localhost:8080/config.html",
+        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/config.html",
         "canLinkExternalContent": false
       },
       "liveConfig": {
-        "viewerUrl": "https://localhost:8080/live_config.html",
+        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/live_config.html",
         "canLinkExternalContent": false
       }
     },
