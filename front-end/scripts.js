@@ -70,7 +70,9 @@ function EventListeners()
     document.getElementById("heldItem3").addEventListener("click",function() {LoadInformationIntoContentArea("heldItem3")})
     document.getElementById("battleItem").addEventListener("click",function() {LoadInformationIntoContentArea("battleItem")})
     document.getElementById("refreshNoBuildsFound").addEventListener("click",function() {Refresh()})
-    document.getElementById("refresh").addEventListener("click",function() {Refresh()})
+    document.getElementById("refresh").addEventListener("click",function() {Refresh()})    
+    document.getElementById("openNav").addEventListener("click",function() {openNav()})
+    document.getElementById("closeNav").addEventListener("click",function() {closeNav()})   
 }
 
 function Refresh()
@@ -284,7 +286,7 @@ function LoadInformationIntoContentArea(area)
             //$("#contentLevel").text(Move1.Levels.replace(" (Choose One)",""))
             $("#contentDesc").text(Move1.Description)
             $("#contentType").text("("+Move1.Type+")")
-            $("#contentCooldown").text(Move1.Cooldown)
+            $("#contentCooldown").text(Move1.Cooldown+"s")
             //$("#contentUpgrade").text(Move1.Upgrade)
             break;
         case "move2":
@@ -292,7 +294,7 @@ function LoadInformationIntoContentArea(area)
             //$("#contentLevel").text(Move2.Levels.replace(" (Choose One)",""))
             $("#contentDesc").text(Move2.Description)
             $("#contentType").text("("+Move2.Type+")")
-            $("#contentCooldown").text(Move2.Cooldown)
+            $("#contentCooldown").text(Move2.Cooldown+"s")
             //$("#contentUpgrade").text(Move2.Upgrade)
             break;
         case "battleItem":

@@ -226,6 +226,10 @@
       border: none;
   }
 
+  .sidebar_buttons:hover {
+    background-color: #F37521;
+}
+
   ul {      
     list-style-type: none;
   }
