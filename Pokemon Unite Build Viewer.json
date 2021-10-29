@@ -121,7 +121,7 @@
     "authorName": "Dillonzer",
     "bitsEnabled": false,
     "canInstall": true,
-    "configUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/config.html",
+    "configUrl": "https://localhost:8080/config.html",
     "configurationLocation": "none",
     "description": "Does chat keep asking you about your Pokemon Unite build? No more worries! Now you can set your build up in the Dashboard view and then everyone in chat can see it!\n\n- Allows for saving multiple builds for easy switching\n- Mobile (Android) friendly and Panel options are available!",
     "eulaTosUrl": "",
@@ -134,7 +134,7 @@
     },
     "id": "442dnakrbplhbrsjz5en1bc53i7obr",
     "installationCount": -42,
-    "liveConfigUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/live_config.html",
+    "liveConfigUrl": "https://localhost:8080/live_config.html",
     "name": "Pokemon Unite Build Viewer",
     "panelHeight": 500,
     "privacyPolicyUrl": "",
@@ -145,30 +145,30 @@
       "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/screenshot3404f5dd-103e-4718-90c4-e969cb02988c"
     ],
     "sku": "",
-    "state": "In Review",
+    "state": "Testing",
     "subscriptionsSupportLevel": "none",
     "summary": "Show your viewers your Pokemon Unite build on stream!",
     "supportEmail": "dillonzerapps@gmail.com",
     "vendorCode": "",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "viewerSummary": "Displays the streamer's Pokemon Unite Build",
-    "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
+    "viewerUrl": "https://localhost:8080/panel.html",
     "viewerUrls": {
-      "mobile": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/mobile.html",
-      "panel": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
-      "component": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/video_component.html"
+      "mobile": "https://localhost:8080/mobile.html",
+      "panel": "https://localhost:8080/panel.html",
+      "component": "https://localhost:8080/video_component.html"
     },
     "views": {
       "mobile": {
-        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/mobile.html"
+        "viewerUrl": "https://localhost:8080/mobile.html"
       },
       "panel": {
-        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/panel.html",
+        "viewerUrl": "https://localhost:8080/panel.html",
         "height": 500,
         "canLinkExternalContent": false
       },
       "component": {
-        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/video_component.html",
+        "viewerUrl": "https://localhost:8080/video_component.html",
         "aspectWidth": 0,
         "aspectHeight": 0,
         "aspectRatioX": 44000,
@@ -182,11 +182,11 @@
         "autoScale": true
       },
       "config": {
-        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/config.html",
+        "viewerUrl": "https://localhost:8080/config.html",
         "canLinkExternalContent": false
       },
       "liveConfig": {
-        "viewerUrl": "https://442dnakrbplhbrsjz5en1bc53i7obr.ext-twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/a7eec74a439bb89cce149991f5e405d8/live_config.html",
+        "viewerUrl": "https://localhost:8080/live_config.html",
         "canLinkExternalContent": false
       }
     },

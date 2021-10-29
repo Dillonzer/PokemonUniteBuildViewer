@@ -21,7 +21,7 @@ function EventHandlers() {
   document.getElementById("buildId").addEventListener("change",function() {GetBuild()})
   document.getElementById("submit").addEventListener("click",function() {Submit()})
   document.getElementById("updateAndPush").addEventListener("click",function() {Update()})
-  document.getElementById("updateAndPush").addEventListener("click",function() {Submit()})
+  document.getElementById("deleteBuild").addEventListener("click",function() {DeleteBuild()})
 }
 
 function ExistingBuild() 
@@ -32,6 +32,7 @@ function ExistingBuild()
   $("#newBuild").hide();
   $("#updateAndPush").show();
   $("#submit").hide()
+  $("#deleteBuild").show()
 
   
   $.ajax({
@@ -70,6 +71,7 @@ function NewBuild()
   $("#existingBuild").hide();
   $("#updateAndPush").hide();
   $("#submit").show()
+  $("#deleteBuild").hide()
   GetInformation()
 }
 
@@ -402,4 +404,18 @@ function GetAndSelectMoves(move1, move2)
           alert(error.responseJSON.message);
       }
         })
+}
+
+function DeleteBuild()
+{
+  var settings = {
+    "url": apiUrl+"/delete/"+buildName+"/"+channelId,
+    "method": "POST",
+    "timeout": 0,
+  };
+
+  $.ajax(settings).done(function (response) {
+    document.getElementById("success").style.color = "green"
+    document.getElementById("success").textContent = "SUCCESS!"
+  });
 }

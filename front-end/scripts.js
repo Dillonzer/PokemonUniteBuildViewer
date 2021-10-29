@@ -122,14 +122,14 @@ function GetItems(LoadBuildCallback)
         for(index in data) {
             AllItems.push(new Item(data[index].name, data[index].type, data[index].description, data[index].imageLink))
         }
-        LoadBuildCallback();
+        LoadBuildCallback(GetAllBuilds);
     }).catch(err => {
         console.log(err)
     });
 
 }
 
-function LoadBuild()
+function LoadBuild(GetAllBuildsCallback)
 {
     $.ajax({
         type: "GET",
@@ -162,12 +162,86 @@ function LoadBuild()
                 $("#nobuildsfound").show()
                 $("#viewer").hide()
             }
+            GetAllBuildsCallback()
           
         },
         error: function(error) {
             alert(error.responseJSON.message);
         }
           })
+}
+
+function LoadBuildFromButton(obj)
+{ 
+    var buildName = obj.id
+    console.log(buildName)
+
+    $.ajax({
+        type: "GET",
+        url: pokeurl + "/allBuilds/"+channelId,
+        success: function(data) {
+          if(typeof data != 'undefined')
+            {
+                if( data.length ) {
+                    for(index in data)
+                    {
+                        if(data[index].buildName == buildName)
+                        {
+                            PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data[index].pokemonName) return pokemon})
+                            $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
+                            $("#pokemonName").text(PokemonForBuild.Name) 
+                            Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data[index].move1) return move})
+                            Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data[index].move2) return move})
+                            HeldItem1 = AllItems.find(function(item){if(item.Name == data[index].heldItem1) return item})
+                            HeldItem2 = AllItems.find(function(item){if(item.Name == data[index].heldItem2) return item})
+                            HeldItem3 = AllItems.find(function(item){if(item.Name == data[index].heldItem3) return item})
+                            BattleItem = AllItems.find(function(item){if(item.Name == data[index].battleItem) return item}) 
+                            
+                            $("#move1img").attr("src",Move1.ImageLink)  
+                            $("#move1txt").text(Move1.Name)    
+                            $("#move2img").attr("src",Move2.ImageLink)     
+                            $("#move2txt").text(Move2.Name)       
+                            $("#battleItemImg").attr("src",BattleItem.ImageLink) 
+                            $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
+                            $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
+                            $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
+                            $("#nobuildsfound").hide()
+                            $("#viewer").show()
+                        }
+                    }
+                }
+            }
+            else{
+                if(data.buildName == buildName)
+                {
+                    PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data.pokemonName) return pokemon})
+                    $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
+                    $("#pokemonName").text(PokemonForBuild.Name) 
+                    Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move1) return move})
+                    Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move2) return move})
+                    HeldItem1 = AllItems.find(function(item){if(item.Name == data.heldItem1) return item})
+                    HeldItem2 = AllItems.find(function(item){if(item.Name == data.heldItem2) return item})
+                    HeldItem3 = AllItems.find(function(item){if(item.Name == data.heldItem3) return item})
+                    BattleItem = AllItems.find(function(item){if(item.Name == data.battleItem) return item}) 
+                    
+                    $("#move1img").attr("src",Move1.ImageLink)  
+                    $("#move1txt").text(Move1.Name)    
+                    $("#move2img").attr("src",Move2.ImageLink)     
+                    $("#move2txt").text(Move2.Name)       
+                    $("#battleItemImg").attr("src",BattleItem.ImageLink) 
+                    $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
+                    $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
+                    $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
+                    $("#nobuildsfound").hide()
+                    $("#viewer").show()
+                }
+            }          
+        },
+        error: function(error) {
+            alert(error.responseJSON.message);
+        }
+          })
+    closeNav()
 }
 
 function LoadInformationIntoContentArea(area)
@@ -225,3 +299,45 @@ function LoadInformationIntoContentArea(area)
     }
 
 }
+
+function GetAllBuilds()
+{  
+    var builds = $("#buildList")
+
+    $.ajax({
+        type: "GET",
+        url: pokeurl + "/allBuilds/"+channelId,
+        success: function(data) {
+        if(typeof data != 'undefined')
+        {
+            if( data.length ) {
+                for( item in data ) {
+                    html = '<li><button id=\"'+data[item].buildName+'\" value=\"'+data[item].buildName+'\" class=\"sidebar_buttons\">' + data[item].pokemonName + '</button></li>';
+                    builds.append(html);
+                    document.getElementById(data[item].buildName).addEventListener("click",function() {LoadBuildFromButton(this)})
+                }
+                
+            }
+            else
+            {        
+                html = '<li><button id=\"'+data.buildName+'\" value=\"'+data.buildName+'\" class=\"sidebar_buttons\">' + data.pokemonName + '</button></li>';
+                builds.append( html);
+                document.getElementById(data.buildName).addEventListener("click",function() {LoadBuildFromButton(this)})
+            }
+        }
+        },
+        error: function(error) {
+            alert(error.responseJSON.message);
+        }
+        })
+}
+
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "200px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  } 

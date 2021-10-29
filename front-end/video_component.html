@@ -6,12 +6,21 @@
 </head>
 <body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: rgb(28, 27, 27);">
     <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-    <img id="refresh" src="images/refresh.png" title="Refresh" />
     <div id="nobuildsfound">
         <p style="padding-left: 5px;">No builds currently found for this channel.<p>
         <button id="refreshNoBuildsFound">Refresh!</button>
     </div>
     <div id="viewer" style="display: none;">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul id="buildList">
+
+            </ul>
+        </div>
+        <div>
+            <button class="openbtn" onclick="openNav()">&#9776; Choose Build</button>
+            <img id="refresh" src="images/refresh.png" title="Refresh" />
+        </div>
         <div id="pokemon">
             <img id="pokemonImg" class="pokemonimg"/>
             <p id="pokemonName" class="headerText"></p>
