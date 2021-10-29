@@ -408,14 +408,17 @@ function GetAndSelectMoves(move1, move2)
 
 function DeleteBuild()
 {
+  var buildName = $("#buildId").val() 
+  
   var settings = {
     "url": apiUrl+"/delete/"+buildName+"/"+channelId,
-    "method": "POST",
+    "method": "DELETE",
     "timeout": 0,
   };
 
   $.ajax(settings).done(function (response) {
-    document.getElementById("success").style.color = "green"
-    document.getElementById("success").textContent = "SUCCESS!"
+    ExistingBuild()
   });
+
+
 }

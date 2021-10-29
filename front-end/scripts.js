@@ -133,30 +133,56 @@ function LoadBuild(GetAllBuildsCallback)
 {
     $.ajax({
         type: "GET",
-        url: pokeurl + "/build/"+channelId,
+        url: pokeurl + "/allBuilds/"+channelId,
         success: function(data) {
           if(typeof data != 'undefined')
             {
-              PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data.pokemonName) return pokemon})
-              $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
-              $("#pokemonName").text(PokemonForBuild.Name) 
-              Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move1) return move})
-              Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move2) return move})
-              HeldItem1 = AllItems.find(function(item){if(item.Name == data.heldItem1) return item})
-              HeldItem2 = AllItems.find(function(item){if(item.Name == data.heldItem2) return item})
-              HeldItem3 = AllItems.find(function(item){if(item.Name == data.heldItem3) return item})
-              BattleItem = AllItems.find(function(item){if(item.Name == data.battleItem) return item}) 
-              
-              $("#move1img").attr("src",Move1.ImageLink)  
-              $("#move1txt").text(Move1.Name)    
-              $("#move2img").attr("src",Move2.ImageLink)     
-              $("#move2txt").text(Move2.Name)       
-              $("#battleItemImg").attr("src",BattleItem.ImageLink) 
-              $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
-              $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
-              $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
-              $("#nobuildsfound").hide()
-              $("#viewer").show()
+                if( data.length ) 
+                {
+                    PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data[0].pokemonName) return pokemon})
+                    $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
+                    $("#pokemonName").text(PokemonForBuild.Name) 
+                    Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data[0].move1) return move})
+                    Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data[0].move2) return move})
+                    HeldItem1 = AllItems.find(function(item){if(item.Name == data[0].heldItem1) return item})
+                    HeldItem2 = AllItems.find(function(item){if(item.Name == data[0].heldItem2) return item})
+                    HeldItem3 = AllItems.find(function(item){if(item.Name == data[0].heldItem3) return item})
+                    BattleItem = AllItems.find(function(item){if(item.Name == data[0].battleItem) return item}) 
+                    
+                    $("#move1img").attr("src",Move1.ImageLink)  
+                    $("#move1txt").text(Move1.Name)    
+                    $("#move2img").attr("src",Move2.ImageLink)     
+                    $("#move2txt").text(Move2.Name)       
+                    $("#battleItemImg").attr("src",BattleItem.ImageLink) 
+                    $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
+                    $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
+                    $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
+                    $("#nobuildsfound").hide()
+                    $("#viewer").show()
+                }
+                else
+                {
+                    PokemonForBuild = AllPokemon.find(function(pokemon){if(pokemon.Name == data.pokemonName) return pokemon})
+                    $("#pokemonImg").attr("src",PokemonForBuild.ImageLink)              
+                    $("#pokemonName").text(PokemonForBuild.Name) 
+                    Move1 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move1) return move})
+                    Move2 = PokemonForBuild.Moves.find(function(move){if(move.Name == data.move2) return move})
+                    HeldItem1 = AllItems.find(function(item){if(item.Name == data.heldItem1) return item})
+                    HeldItem2 = AllItems.find(function(item){if(item.Name == data.heldItem2) return item})
+                    HeldItem3 = AllItems.find(function(item){if(item.Name == data.heldItem3) return item})
+                    BattleItem = AllItems.find(function(item){if(item.Name == data.battleItem) return item}) 
+                    
+                    $("#move1img").attr("src",Move1.ImageLink)  
+                    $("#move1txt").text(Move1.Name)    
+                    $("#move2img").attr("src",Move2.ImageLink)     
+                    $("#move2txt").text(Move2.Name)       
+                    $("#battleItemImg").attr("src",BattleItem.ImageLink) 
+                    $("#heldItem1Img").attr("src",HeldItem1.ImageLink) 
+                    $("#heldItem2Img").attr("src",HeldItem2.ImageLink) 
+                    $("#heldItem3Img").attr("src",HeldItem3.ImageLink) 
+                    $("#nobuildsfound").hide()
+                    $("#viewer").show()
+                }
             }
             else{
                 $("#nobuildsfound").show()
@@ -174,7 +200,12 @@ function LoadBuild(GetAllBuildsCallback)
 function LoadBuildFromButton(obj)
 { 
     var buildName = obj.id
-    console.log(buildName)
+    $("#contentDesc").text("Click a move or item to see a description of it in this box!")
+    $("#contentName").text("")
+    //$("#contentLevel").text("")
+    $("#contentType").text("")
+    $("#contentCooldown").text("")
+    //$("#contentUpgrade").text("")
 
     $.ajax({
         type: "GET",
@@ -302,7 +333,12 @@ function LoadInformationIntoContentArea(area)
 
 function GetAllBuilds()
 {  
-    var builds = $("#buildList")
+    var builds = $("#buildList") 
+    var removeFrom = document.getElementById("buildList")
+    while (removeFrom.firstChild) {
+        removeFrom.removeChild(removeFrom.firstChild);
+    }
+       
 
     $.ajax({
         type: "GET",
