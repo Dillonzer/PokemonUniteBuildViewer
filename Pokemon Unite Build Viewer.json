@@ -123,14 +123,14 @@
     "canInstall": true,
     "configUrl": "https://localhost:8080/config.html",
     "configurationLocation": "none",
-    "description": "Does chat keep asking you about your Pokemon Unite build? No more worries! Now you can set your build up in the Dashboard view and then everyone in chat can see it!\n\n- Allows for saving multiple builds for easy switching\n- Mobile (Android) friendly and Panel options are available!",
+    "description": "Does chat keep asking you about your Pokemon Unite builds? No more worries! Now you can set your builds up in the Dashboard view and then everyone in chat can see them!\n\n- Allows for saving multiple builds for users to look through\n- Mobile (Android) friendly and Panel options are available!",
     "eulaTosUrl": "",
     "hasChatSupport": false,
     "iconUrl": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/logo55205fdd-08d9-4230-8c98-980dab269cb1",
     "iconUrls": {
       "100x100": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/logo55205fdd-08d9-4230-8c98-980dab269cb1",
       "24x24": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.1/taskbar41f8127d-f7a7-4dd9-bf29-14d9a1e0d913",
-      "300x200": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/discovery2f553002-07f0-44d3-a935-b15ec8a8fe6c"
+      "300x200": "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.3/discovery9db4f6ea-ecce-46d2-a21f-16ff59d7c847"
     },
     "id": "442dnakrbplhbrsjz5en1bc53i7obr",
     "installationCount": -42,
@@ -141,17 +141,17 @@
     "requestIdentityLink": false,
     "requiredBroadcasterAbilities": [],
     "screenshotUrls": [
-      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/screenshotf148f8ee-6a9d-4757-8f78-e072022ac1b5",
-      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.2/screenshot3404f5dd-103e-4718-90c4-e969cb02988c"
+      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.3/screenshot0acaf2ba-0fbb-4e1a-a4da-a952664a6e74",
+      "https://extensions-discovery-images.twitch.tv/442dnakrbplhbrsjz5en1bc53i7obr/0.0.3/screenshotfd641d21-fedc-43a1-b321-e6e25fd00066"
     ],
     "sku": "",
     "state": "Testing",
     "subscriptionsSupportLevel": "none",
-    "summary": "Show your viewers your Pokemon Unite build on stream!",
+    "summary": "Show your viewers your Pokemon Unite builds on stream!",
     "supportEmail": "dillonzerapps@gmail.com",
     "vendorCode": "",
-    "version": "0.0.3",
-    "viewerSummary": "Displays the streamer's Pokemon Unite Build",
+    "version": "0.0.4",
+    "viewerSummary": "Displays the streamer's Pokemon Unite Builds",
     "viewerUrl": "https://localhost:8080/panel.html",
     "viewerUrls": {
       "mobile": "https://localhost:8080/mobile.html",

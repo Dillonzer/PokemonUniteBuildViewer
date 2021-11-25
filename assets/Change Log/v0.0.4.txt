@@ -1,0 +1,35 @@
+Pokemon Unite Build Viewer (v0.0.4)
+
+Live-Config instructions:
+**NEW BUILD**
+1. Open the Pokemon Unite Build Viewer extension from the Creator Dashboard
+2. Put in a Build Name
+3. Choose a Pokemon
+4. Choose your moves and items
+	- NOTE: You cannot have any of the same named Held Items and you must have a Build Name to Push to Extension
+5. Push to Extension
+
+
+**EXISTING BUILD**
+1. Open the Pokemon Unite Build Viewer extension from the Creator Dashboard
+2. Click on Existing
+3. Choose an Existing Set if you have one
+4. Make changes if you'd like to the set otherwise go to the next step
+	- NOTE: You cannot have any of the same named Held Items and you must have a Build Name to Push to Extension
+5. Update Build and Push to Extension
+
+**DELETE BUILD**
+1. Open the Pokemon Unite Build Viewer extension from the Creator Dashboard
+2. Click on Existing
+3. Choose an Existing Set 
+4. Click on the Delete Build button
+
+User Instructions:
+NOTE: If there is no builds for the streamer the extension will let you know and once they add one you can click the big Refresh button
+1. Click on the orange pokeball icon to view the extension (if component mode)
+2. Choose a streamers build by clicking Choose Build and clicking one of the options
+3. Click on any of the Move Icons or Item Icons to get a description in the Content Box
+4. Click the orange refresh button to refresh if the streamer changes their build during the stream.
+
+CHANGELOG:
+- Fixing a bug in Panel / Mobile view where Choose Build wasn't opening
