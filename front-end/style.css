@@ -16,7 +16,8 @@
     position: absolute;
     border-radius: 10px;
     border-color: #F37521;
-    border-style:solid
+    border-style:solid;
+    overflow-y:scroll;
 }
 
 .img-with-txt {
@@ -48,7 +49,8 @@
 }
 
 .headerText {
-    font-size: xx-large;
+    padding-top: 5px;
+    font-size: x-large;
     stroke: black;
     stroke-width: 5px;
     color: white;
@@ -154,7 +156,8 @@
     position: absolute;
     border-radius: 10px;
     border-color: #F37521;
-    border-style:solid
+    border-style:solid;
+    overflow-y:scroll;
 }
 
 .panel_itemimg {
@@ -180,7 +183,7 @@
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -222,7 +225,7 @@
   .sidebar_buttons {
       background: none;
       color: white;
-      font-size: x-large;
+      font-size: large;
       border: none;
   }
 

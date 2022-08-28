@@ -58,28 +58,6 @@
         "isSubscriptionStatusAvailable": false
       },
       "frameSize": {
-        "width": 852,
-        "height": 480
-      },
-      "id": "3",
-      "isPopout": false,
-      "label": "",
-      "linked": false,
-      "linkedUserId": "",
-      "orientation": "Portrait",
-      "type": "component",
-      "viewerType": "Broadcaster"
-    },
-    {
-      "channelId": "56083652",
-      "configurationAnchor": "panel",
-      "displayChannelName": "Dillonzer",
-      "features": {
-        "isBitsEnabled": false,
-        "isChatEnabled": false,
-        "isSubscriptionStatusAvailable": false
-      },
-      "frameSize": {
         "width": 1280,
         "height": 720
       },
@@ -150,7 +128,7 @@
     "summary": "Show your viewers your Pokemon Unite builds on stream!",
     "supportEmail": "dillonzerapps@gmail.com",
     "vendorCode": "",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "viewerSummary": "Displays the streamer's Pokemon Unite Builds",
     "viewerUrl": "https://localhost:8080/panel.html",
     "viewerUrls": {

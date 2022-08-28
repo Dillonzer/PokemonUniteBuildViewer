@@ -1,4 +1,4 @@
-const pokeurl = "https://ptcg-api.herokuapp.com/pokemonunite"
+const pokeurl = "https://pkmntcgapi-production.up.railway.app/pokemonunite"
 
 var AllPokemon = [];
 var AllItems = [];
@@ -73,6 +73,8 @@ function EventListeners()
     document.getElementById("refresh").addEventListener("click",function() {Refresh()})    
     document.getElementById("openNav").addEventListener("click",function() {openNav()})
     document.getElementById("closeNav").addEventListener("click",function() {closeNav()})   
+    //document.getElementById("openEmblemNav").addEventListener("click",function() {openEmblemNav()})
+    //document.getElementById("closeEmblemNav").addEventListener("click",function() {closeEmblemNav()})   
 }
 
 function Refresh()
@@ -378,4 +380,13 @@ function openNav() {
   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
+  } 
+
+  function openEmblemNav() {
+    document.getElementById("myEmblemSidebar").style.width = "200px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeEmblemNav() {
+    document.getElementById("myEmblemSidebar").style.width = "0";
   } 
