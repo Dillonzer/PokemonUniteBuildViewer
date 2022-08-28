@@ -33,7 +33,8 @@ NOTE: If there is no builds for the streamer the extension will let you know and
 
 CSP Urls
 - https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com
-- https://pkmntcgapi-production.up.railway.app/
+- https://pkmntcgapi-production.up.railway.app
 
 CHANGELOG:
-- Added in Emblem Support
+- Changed api url 
+- Added a config.html to point people to the quick action
